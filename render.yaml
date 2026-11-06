@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: xray-singapore
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /healthz
+    envVars:
+      - key: PORT
+        value: "8080"
+      - key: VLESS_UUID
+        sync: false
+      - key: WS_TOKEN
+        sync: false
+      - key: SUB_TOKEN
+        sync: false
